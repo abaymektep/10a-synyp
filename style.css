@@ -1,0 +1,164 @@
+body{
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('img/background1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: black;
+}
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+}
+.bio-card {
+    background-color: rgb(235, 235, 235);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.bio-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 5px;
+}
+.teacher-card {
+    background-color: whitesmoke;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 20px;
+    width: 300px;
+}
+.teacher-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+.sigmar-regular {
+    font-family: "Sigmar", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+.title1 {
+    font-family: "Sigmar", serif;
+    font-size: 150px;
+    font-style: italic;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: yellow;
+    top: 100px;
+    transform: rotate(-5deg);
+}
+.title2 {
+    position: absolute;
+    font-family: "Sigmar", serif;
+    font-size: 30px;
+    font-style: italic;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: rgb(255, 255, 255);
+    transform: rotate(-3deg);
+    top: 210px;
+}
+.title3 {
+    font-family: "Sigmar", serif;
+    font-size: 100px;
+    font-style: italic;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: yellow;
+    top: 100px;
+}
+.title4 {
+    position: absolute;
+    font-family: "Sigmar", serif;
+    font-size: 50px;
+    font-style: italic;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: rgb(255, 255, 255);
+    top: 330px;
+}
+header {
+    background-color: aquamarine;
+    height: 70px;
+    width: 192.10vh;
+    position: absolute;
+    left: -1px;
+    top: 0px;
+    color: rgb(47, 0, 255);
+    font-size: 20px;
+    font-family: "Noto Sans", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 600;
+}
+.name {
+    position: absolute;
+    left: 90px;
+    top: -10px;
+}
+.LOGO {
+    height: 60px;
+    width: 60px;
+    position: absolute;
+    left: 20px;
+    top: 10px;
+}
+@media screen and (max-width: 768px) {
+    .title1 { font-size: 10vw; }
+    .title2 { font-size: 5vw; top: 75px; }
+    .title3 { font-size: 8vw; }
+    .title4 { font-size: 6vw; top: 110px; }
+    
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .bio-card {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .teacher-card {
+        width: 90%;
+    }
+
+    header {
+        width: 100%;
+        height: 3%;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .LOGO {
+        width: 35px;
+        height: 35px;
+        left: 10px;
+        top: 5px;
+    }
+
+    .name {
+        left: 45px;
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Abay 10《A》</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sigmar&display=swap" rel="stylesheet">
+</head>
+<body>
+    <audio autoplay loop>
+        <source src="audio/bauyrlarym.mp3" type="audio/mp3">
+    </audio>
+
+    <header>
+        <img class="LOGO" src="img/logo.PNG" alt="">
+        <p class="name"> Абай ауылындағы <br>орта мектебі</p>
+    </header>
+
+    <div class="title1">10 «A»</div>
+    <div class="title2"><i>Bir uidyn balalaryndai</i></div>
+    <div class="title3"><i>_______</i></div>
+    <div class="title4"><i>BAUYRLARYM</i></div>
+
+    <div class="teacher-card">
+        <img src="images/teacher.jpg" alt="Сынып жетекшісі">
+        <h3>Найзабаева Бақытгүл Оразовна</h3>
+        <p style="color: gold; font-size: 20px;"><strong>Сынып Жетекші</strong> </p>
+        <p><strong>Туған күні:</strong></p>
+        <p><strong>Пәні:</strong> Физика пән мұғалімі</p>
+    </div>
+    <div class="container" id="bio-container"></div>
+    <script>
+        const people = [
+            { name: "Абдиғапар Абдусамат Мерейұлы", birthdate: "26.06.08", hobby: "Футбол", subject: "Математика", image: "img/abdigapar.jpg" },
+            { name: "Алпысбай Хамза Айбынұлы", birthdate: "15.05.09", hobby: "Кітап оқу", subject: "Физика", image: "img/alpysbay.jpg" },
+            { name: "Алченбай Мирас", birthdate: "02.10.08", hobby: "Саяхаттау", subject: "Химия", image: "img/alchenbay.jpg" },
+            { name: "Аманжол Әлихан Равильұлы", birthdate: "09.06.08", hobby: "Шахмат", subject: "Биология", image: "img/amanzhol.jpg" },
+            { name: "Анарбек Әмір Айдосұлы", birthdate: "12.06.08", hobby: "Гитара ойнау", subject: "Информатика", image: "img/anarbek.jpg" },
+            { name: "Айболат Жаннұр", birthdate: "05.01.09", hobby: "Спорт", subject: "Ағылшын тілі", image: "img/aibolat.jpg" },
+            { name: "Әлтай Елнар", birthdate: "19.07.09", hobby: "Жүзу", subject: "Қазақ тілі", image: "img/altay.jpg" },
+            { name: "Батырхан Әмина Олжасқызы", birthdate: "28.12.09", hobby: "Би", subject: "География", image: "img/batyrkhan.jpg" },
+            { name: "Боранбаев Батыр Тилекбайұлы", birthdate: "17.09.08", hobby: "Жарыстарға қатысу", subject: "Тарих", image: "img/boranbayev.jpg" },
+            { name: "Ділмұрат Мейірбан", birthdate: "28.08.08", hobby: "Кодтау", subject: "Логика", image: "img/dilmurat.jpg" },
+            { name: "Жумасейт Шакузада Жумасейтқызы", birthdate: "08.11.08", hobby: "Домбыра тарту", subject: "Әдебиет", image: "img/zhumaseit.jpg" },
+            { name: "Жұмабай Қайсар", birthdate: "28.05.09", hobby: "Теннис", subject: "Өнер", image: "img/zhumabai.jpg" },
+            { name: "Еркінұлы Есіл", birthdate: "28.01.09", hobby: "Фотография", subject: "Музыка", image: "img/erkinuly.jpg" },
+            { name: "Илиясов Елнур Еркебуланович", birthdate: "13.12.08", hobby: "Жүгіру", subject: "Спорт", image: "img/iliyassov.jpg" },
+            { name: "Куртибаев Алихан", birthdate: "24.03.09", hobby: "Блог жазу", subject: "Әлеуметтану", image: "img/kurtibaev.jpg" },
+            { name: "Қали Шыңғыс", birthdate: "27.07.08", hobby: "Аспаздық", subject: "Технология", image: "img/qali.jpg" },
+            { name: "Максутхан Шыңғыс Ерланұлы", birthdate: "09.06.09", hobby: "Графикалық дизайн", subject: "Информатика", image: "img/maksutkhan.jpg" },
+            { name: "Рахматуллаев Асатилла", birthdate: "16.02.08", hobby: "Бокс", subject: "Құқық", image: "img/rakhmatullaev.jpg" },
+            { name: "Сейтжан Азамат", birthdate: "23.07.09", hobby: "Туризм", subject: "Экономика", image: "img/seitzhan.jpg" },
+            { name: "Тажибоева Гулноза", birthdate: "16.09.08", hobby: "Бейнелеу өнері", subject: "Дизайн", image: "img/tazhiboeva.jpg" },
+            { name: "Таңат Аяулым Ануарқызы",birthdate: "30.05.09", hobby: "Мотоцикл тебу", subject: "Физика", image: "img/tanat.jpg" },
+            { name: "Тастемір Медина", birthdate: "01.05.09", hobby: "Қолөнер", subject: "Дизайн", image: "img/tastemir.jpg" },
+            { name: "Тұрдыхан Өрден", birthdate: "25.08.08", hobby: "Жасанды интеллект", subject: "Робототехника", image: "img/turdykhan.jpg" },
+            { name: "Тілеукен Маржан Дәулетханқызы", birthdate: "04.11.09", hobby: "Өлең жазу", subject: "Поэзия", image: "img/tileuken.jpg" },
+            { name: "Серікбайқызы Балапан", birthdate: "26.08.09", hobby: "Кітап оқу", subject: "Философия", image: "img/serikbaikyzy.jpg" },
+            { name: "Домбаева Гүлмарал Маратқызы", birthdate: "13.05.08", hobby: "Көркемөнер", subject: "Психология", image: "img/dombayeva.jpg" },
+            { name: "Байконырова Анеля", birthdate: "17.03.09", hobby: "Жаңа тілдер үйрену", subject: "Лингвистика", image: "img/baikonyrova.jpg" }
+        ];
+        
+        let container = document.getElementById("bio-container");
+people.forEach(person => {
+    let card = document.createElement("div");
+    card.className = "bio-card";
+    
+    let specialTitle = person.name === "Таңат Аяулым Ануарқызы" 
+        ? '<p style="color: gold; font-size: 20px;"><strong>Староста</strong></p>' 
+        : '';
+
+    card.innerHTML = `<img src="${person.image}" alt="${person.name} фото">
+                      <h2>${person.name}</h2>
+                      ${specialTitle}
+                      <p><strong>Туған күні:</strong> ${person.birthdate}</p>
+                      <p><strong>Қызығушылығы:</strong> ${person.hobby}</p>
+                      <p><strong>Таңдау пәні:</strong> ${person.subject}</p>`;
+    
+    container.appendChild(card);
+});
+    </script>
+</body>
+</html>
